@@ -1,0 +1,92 @@
+nandajana@DESKTOP-UI4A4M3:/mnt/c/Users/Public/Documents/Hearst/qa-interview-main/qa-interview-main/test/APITests/features/steps$ behave
+Feature: Testing FastAPI endpoints # test_app.feature:1
+
+  Scenario: Get endpoint1 numbers                         # test_app.feature:3
+    When I retrieve numbers from endpoint1                # steps.py:6 0.120s
+    Then the response should contain numbers from 1 to 10 # steps.py:12 0.000s
+
+  Scenario Outline: Square a number with endpoint2 -- @1.1   # test_app.feature:13
+    When I send a number 2 to endpoint2                      # steps.py:16 0.113s
+    Then I receive its square 4                              # steps.py:22 0.000s
+
+  Scenario Outline: Square a number with endpoint2 -- @1.2   # test_app.feature:14
+    When I send a number 3 to endpoint2                      # steps.py:16 0.107s
+    Then I receive its square 9                              # steps.py:22 0.001s
+
+  Scenario Outline: Test odd number in endpoint3 -- @1.1   # test_app.feature:22
+    When I send the odd number 3 to endpoint3              # steps.py:26 0.118s
+    Then I should get 1.5 as the result                    # steps.py:32 0.000s
+
+  Scenario Outline: Test odd number in endpoint3 -- @1.2   # test_app.feature:23
+    When I send the odd number 5 to endpoint3              # steps.py:26 0.105s
+    Then I should get 2.5 as the result                    # steps.py:32 0.000s
+
+  Scenario Outline: Test even number in endpoint3 -- @1.1   # test_app.feature:30
+    When I send the even number 2 to endpoint3              # steps.py:36 0.118s
+    Then I should receive an error                          # steps.py:42 0.000s
+
+  Scenario Outline: Test even number in endpoint3 -- @1.2   # test_app.feature:31
+    When I send the even number 4 to endpoint3              # steps.py:36 0.117s
+    Then I should receive an error                          # steps.py:42 0.000s
+
+  Scenario: Send a large number to endpoint2 and get its square  # test_app.feature:33
+    When I send a number 10000 to endpoint2                      # steps.py:16 0.111s
+    Then I receive its square 100000000                          # steps.py:22 0.000s
+
+  Scenario: Send alphabet character to endpoint2  # test_app.feature:37
+    Given I send the character "a" to endpoint2   # steps.py:46 0.120s
+    Then I should receive a validation error      # steps.py:58 0.000s
+
+  Scenario: Send alphabet character to endpoint3  # test_app.feature:41
+    Given I send the character "b" to endpoint3   # steps.py:52 0.162s
+    Then I should receive a validation error      # steps.py:58 0.000s
+
+  Scenario: Send 0 to endpoint2 and get its square  # test_app.feature:47
+    When I send a number 0 to endpoint2             # steps.py:16 0.123s
+    Then I receive its square 0                     # steps.py:22 0.000s
+
+  Scenario: Send 0 to endpoint3 and get an error  # test_app.feature:51
+    When I send the odd number 0 to endpoint3     # steps.py:26 0.074s
+    Then I should receive an error                # steps.py:42 0.000s
+
+  Scenario: Send a fraction to endpoint2     # test_app.feature:55
+    When I send a number 0.5 to endpoint2    # steps.py:16 0.096s
+    Then I should receive a validation error # steps.py:58 0.000s
+
+  Scenario: Send a negative number to endpoint2 and get its square  # test_app.feature:59
+    When I send a number -3 to endpoint2                            # steps.py:16 0.076s
+    Then I receive its square 9                                     # steps.py:22 0.000s
+
+  Scenario Outline: Send a negative odd number to endpoint3 and get its halfed value -- @1.1   # test_app.feature:69
+    When I send the odd number -3 to endpoint3                                                 # steps.py:26 0.075s
+    Then I should get -1.5 as the result                                                       # steps.py:32 0.000s
+
+  Scenario Outline: Send a negative odd number to endpoint3 and get its halfed value -- @1.2   # test_app.feature:70
+    When I send the odd number -5 to endpoint3                                                 # steps.py:26 0.072s
+    Then I should get -2.5 as the result                                                       # steps.py:32 0.000s
+
+  Scenario Outline: Test negative even number in endpoint3 -- @1.1   # test_app.feature:77
+    When I send the even number -2 to endpoint3                      # steps.py:36 0.122s
+    Then I should receive an error                                   # steps.py:42 0.000s
+
+  Scenario Outline: Test negative even number in endpoint3 -- @1.2   # test_app.feature:78
+    When I send the even number -4 to endpoint3                      # steps.py:36 0.080s
+    Then I should receive an error                                   # steps.py:42 0.000s
+
+  Scenario: Send a large number to endpoint2 and get its square  # test_app.feature:80
+    When I send a number 10000 to endpoint2                      # steps.py:16 0.071s
+    Then I receive its square 100000000                          # steps.py:22 0.000s
+
+  Scenario: Send alphabet character to endpoint2  # test_app.feature:84
+    Given I send the character "a" to endpoint2   # steps.py:46 0.068s
+    Then I should receive a validation error      # steps.py:58 0.000s
+
+  Scenario: Send alphabet character to endpoint3  # test_app.feature:88
+    Given I send the character "b" to endpoint3   # steps.py:52 0.071s
+    Then I should receive a validation error      # steps.py:58 0.000s
+
+1 feature passed, 0 failed, 0 skipped
+21 scenarios passed, 0 failed, 0 skipped
+42 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m2.125s
+nandajana@DESKTOP-UI4A4M3:/mnt/c/Users/Public/Documents/Hearst/qa-interview-main/qa-interview-main/test/APITests/features/steps$

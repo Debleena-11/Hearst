@@ -1,0 +1,82 @@
+PS C:\Users\Public\Documents\Hearst\qa-interview-main\qa-interview-main\test\SeleniumTests\features\steps> C:\Users\sndpn\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts\behave.exe
+
+DevTools listening on ws://127.0.0.1:64363/devtools/browser/c43c5c58-f723-4f6e-9cc0-8010a5af8668
+Feature: Testing number operations on a web page # test_app.feature:5
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.1   # test_app.feature:18
+    Given I open the application                                                   # steps.py:27
+    When I select number "2"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "4"                                         # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see no result                                                 # steps.py:58
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.2   # test_app.feature:19
+    Given I open the application                                                   # steps.py:27
+    When I select number "4"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "16"                                        # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see no result                                                 # steps.py:58
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.3   # test_app.feature:20
+    Given I open the application                                                   # steps.py:27
+    When I select number "6"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "36"                                        # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see no result                                                 # steps.py:58
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.4   # test_app.feature:21
+    Given I open the application                                                   # steps.py:27
+    When I select number "8"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "64"                                        # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see no result                                                 # steps.py:58
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.1   # test_app.feature:34
+    Given I open the application                                                   # steps.py:27
+    When I select number "1"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "1"                                         # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see a result as "0.5"                                         # steps.py:53
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.2   # test_app.feature:35
+    Given I open the application                                                   # steps.py:27
+    When I select number "3"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "9"                                         # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see a result as "1.5"                                         # steps.py:53
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.3   # test_app.feature:36
+    Given I open the application                                                   # steps.py:27
+    When I select number "5"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "25"                                        # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see a result as "2.5"                                         # steps.py:53
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.4   # test_app.feature:37
+    Given I open the application                                                   # steps.py:27
+    When I select number "7"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "49"                                        # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see a result as "3.5"                                         # steps.py:53
+
+  Scenario Outline: Selecting numbers and getting results from endpoints -- @1.5   # test_app.feature:38
+    Given I open the application                                                   # steps.py:27
+    When I select number "9"                                                       # steps.py:32
+    And I click the "Send to Endpoint 1" button                                    # steps.py:38
+    Then I expect to see the result as "81"                                        # steps.py:43
+    When I click the "Send to Endpoint 2" button                                   # steps.py:48
+    Then I expect to see a result as "4.5"                                         # steps.py:53
+
+1 feature passed, 0 failed, 0 skipped
+9 scenarios passed, 0 failed, 0 skipped
+54 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m27.423s
+PS C:\Users\Public\Documents\Hearst\qa-interview-main\qa-interview-main\test\SeleniumTests\features\steps>
